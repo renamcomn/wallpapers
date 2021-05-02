@@ -8,7 +8,7 @@ class MainTitle extends StatelessWidget {
           children: [
             Text("WallPapers", style: TextStyle(fontSize: 40, color: Colors.white),),
             SizedBox(height: 5,),
-            Text("8 wallpapers available", style: TextStyle(fontSize: 18, color: Colors.white),),
+            Text("6 wallpapers available", style: TextStyle(fontSize: 18, color: Colors.white),),
           ],
       );
   }

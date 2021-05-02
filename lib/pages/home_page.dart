@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wallpapersapp/pages/home_widgets/gradient_background.dart';
 import 'package:wallpapersapp/pages/home_widgets/list_wallpapers.dart';
+import 'package:wallpapersapp/pages/home_widgets/main_bottom_bar.dart';
 import 'package:wallpapersapp/pages/home_widgets/main_title.dart';
 
 class HomePage extends StatelessWidget {
@@ -8,19 +9,30 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: GradientBackGround(
-        padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(height: 45,),
-              MainTitle(),
+        child: Column(
+          children: [
+            Expanded(
+                child: Container(
+                  padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                  child: SingleChildScrollView(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(height: 45,),
+                          MainTitle(),
 
-              SizedBox(height: 20,),
-              ListWallpapers()
+                          SizedBox(height: 20,),
+                          ListWallpapers()
 
-          ],),
-        )
+                        ],
+                      ),
+                  ),
+                ),
+            ),
+            MainBottomBar()
+          ],
+        ),
+        
       ),
     );
   }
