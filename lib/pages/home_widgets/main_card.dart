@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:wallpapersapp/pages/detail_page.dart';
 
 class MainCard extends StatelessWidget {
 
@@ -21,19 +22,22 @@ class MainCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: 1/y,
-      child: Container(
-        margin: EdgeInsets.only(bottom: 20),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(10),
-          image: DecorationImage(
-            fit: BoxFit.cover,
-            image: AssetImage(this.image)
-          )
+    return GestureDetector(
+      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => DetailPage(image: this.image))),
+        child: AspectRatio(
+          aspectRatio: 1/y,
+          child: Container(
+            margin: EdgeInsets.only(bottom: 20),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(10),
+              image: DecorationImage(
+                fit: BoxFit.cover,
+                image: AssetImage(this.image)
+              )
+            ),
+          ),
         ),
-      ),
     );
   }
 }
